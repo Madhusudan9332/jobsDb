@@ -23,7 +23,7 @@ const jobSchema = mongoose.Schema({
 const jobModel = mongoose.model("jobs", jobSchema);
 
 const jobScrapper = async (pageNo = 1) => {
-  const browser = await puppeteer.launch({headless:false});
+  const browser = await puppeteer.launch({headless:true});
   const page = await browser.newPage();
   await page.setViewport({ width: 1280, height: 800 });
   await page.goto(`https://www.naukri.com/it-jobs-${pageNo}?src=gnbjobs_homepage_srch`);

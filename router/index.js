@@ -16,7 +16,8 @@ const errorMiddleware = (err,req,res,next)=>{
 }
 app.use(errorMiddleware)
 
-app.get('/jobs',jobController.jobs)
+app.get('/jobs',jobController.jobs);
+
 app.get('/',(req,res)=>{
     res.json({
         status: 200,
